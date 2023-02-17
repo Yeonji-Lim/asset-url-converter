@@ -5,7 +5,7 @@ import pandas as pd
 TARGET_ASSET_PATH = sys.argv[1]
 OLD_CDN = sys.argv[2]
 NEW_CDN = sys.argv[3]
-OUTPUT_ASSET_PATH = ''.join(TARGET_ASSET_PATH.split('.')[:-1]) + '_converted_' + str(datetime.now().strftime("%Y%m%d_%H%M%S")) + '.xlsx'
+OUTPUT_ASSET_PATH = '.'.join(TARGET_ASSET_PATH.split('.')[:-1]) + '_converted_' + str(datetime.now().strftime("%Y%m%d_%H%M%S")) + '.xlsx'
 
 if len(sys.argv) != 4:
     print('실행 인자의 개수가 다릅니다.')
