@@ -1,4 +1,5 @@
 import sys
+import re
 from datetime import datetime
 import pandas as pd
 
@@ -23,6 +24,8 @@ writer = pd.ExcelWriter(OUTPUT_ASSET_PATH, engine="openpyxl")
 print('Start Converting...')
 for key, df in base_data_df.items():
     df = df.replace(to_replace = OLD_CDN, value = NEW_CDN, regex=True)
+    df = df.rename(columns= lambda x: re.sub('^Unnamed: [0-9]', '', x))
+    
     df.to_excel(writer, sheet_name=key, index=False)
     print('Converted Sheet : ' + key)
 
