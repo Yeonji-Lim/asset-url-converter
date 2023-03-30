@@ -226,3 +226,6 @@ poetry.toml
 
 # Python Virtual Environment of This Project
 auc_env
+
+# 보안 폴더
+test
